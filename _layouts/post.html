@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+      <div class="row">
+        <div class="col">
+
+          <h4><small class="text-muted">{{ page.categories | join: " / " }}</small></h2>
+          <h3>{{ page.title | smartify }}</h2>
+          <p>{{ page.role }}</p>
+
+          {% include posts/carousel.html %}
+
+          {{ content }}
+
+          <p class="h4 text-center">
+          {% if page.link %}
+            Watch {{ page.title }} <a href="{{ page.link }}" class="" target="_blank">{{ page.link }}</a>
+          {% else %}
+            {{ page.title }} coming soon
+          {% endif %}
+            
+          </p>
+
+          <nav aria-label="Post navigation">
+            <ul class="pagination justify-content-center mt-4">
+              <li class="page-item{% if page.previous %}{% else %} disabled{% endif %}"><a class="page-link" href="{{ page.previous.url }}">Previous</a></li>
+              <li class="page-item{% if page.next %}{% else %} disabled{% endif %}"><a class="page-link" href="{{ page.next.url }}">Next</a></li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>

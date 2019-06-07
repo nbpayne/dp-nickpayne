@@ -1,0 +1,40 @@
+---
+layout: default
+---
+      <div class="row mb-3">
+        <div class="col-lg-8 order-lg-last mb-3">
+          <img src="/img/np-01.jpg" class="img-fluid" />
+        </div>
+        <div class="col-lg-4">
+          {{ content }}
+        </div>
+      </div>
+      <h3>Recent Work</h3>
+      {% assign size = site.posts | size %}
+      <div class="row mb-md-3">
+        <div class="col{% if size <= 3 %} col-md-{{ size | times: 4 }}{% endif %}">
+          <div class="card-deck">
+          {% for post in site.posts %}
+            <div class="card">
+              <a href="{{ post.url }}"><img class="card-img-top" src="/img/{{ post.path | remove: "_posts/" | remove: ".md" }}/th/{{ post.imgs | first }}"></a>
+              <div class="card-body">
+                <h6 class="card-subtitle text-muted">{{ post.categories | join: " / " }}</h6>
+                <h5 class="card-title mb-2">
+                  {{ post.title | smartify }}
+                </h5>
+                <p class="card-text">{{ post.role }}</p>
+              </div>
+            </div>
+            {% assign mod = forloop.index | modulo: 3  %}
+            {% if mod == 0 %}
+          </div>
+        </div>
+      </div>
+      <div class="row mb-md-3">
+        <div class="col{% if forloop.rindex <= 3 %} col-md-{{ forloop.rindex | minus: 1 | times: 4 }}{% endif %}">
+          <div class="card-deck">
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+      </div>

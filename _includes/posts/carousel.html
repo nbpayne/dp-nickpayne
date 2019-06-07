@@ -1,0 +1,31 @@
+      <div id="screenshots" class="carousel slide carousel-fade mb-3 d-none d-md-block">
+        <div class="carousel-inner">
+        {% for img in page.imgs %}
+          <div class="carousel-item{% if forloop.first %} active{% endif %}">
+            <img src="/img/{{ page.path | remove: "_posts/" | remove: ".md" }}/{{ img }}" class="d-block w-100">
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+
+      {% assign size = page.imgs | size %}
+      <div class="row mb-md-3">
+        <div class="col{% if size <= 3 %} col-md-{{ size | times: 4 }}{% endif %}">
+          <div class="card-deck">
+          {% for img in page.imgs %}
+            <div class="card">
+              <a href="#screenshots" data-slide-to="{{ forloop.index | minus: 1 }}"><img class="card-img-top" src="/img/{{ page.path | remove: "_posts/" | remove: ".md" }}/th/{{ img }}"></a>
+            </div>
+            {% assign mod = forloop.index | modulo: 3  %}
+            {% if mod == 0 %}
+          </div>
+        </div>
+      </div>
+      <div class="row mb-md-3">
+        <div class="col{% if forloop.rindex <= 3 %} col-md-{{ forloop.rindex | minus: 1 | times: 4 }}{% endif %}">
+          <div class="card-deck">
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+      </div>

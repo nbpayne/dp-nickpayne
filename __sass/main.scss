@@ -1,0 +1,54 @@
+// Typography
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+}
+
+// Components
+.card {
+    border: none;
+}
+
+.card-body {
+    padding: 1.25rem 0;
+}
+
+.card-img-top {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.card-title a {
+  color: #212529;
+}
+
+.navbar {
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  white-space: inherit;
+  width: 75%;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    align-items: center;
+  }
+  .navbar-brand {
+    width: 100%;
+  }
+}
+
+.page-link {
+  text-align: center;
+  width: 20ex;
+}
