@@ -1,4 +1,4 @@
-      <div id="screenshots" class="carousel slide carousel-fade mb-3 d-none d-md-block">
+      <div id="screenshots" class="carousel slide carousel-fade mb-3 d-none d-sm-block">
         <div class="carousel-inner">
         {% for img in page.imgs %}
           <div class="carousel-item{% if forloop.first %} active{% endif %}">
@@ -9,8 +9,8 @@
       </div>
 
       {% assign size = page.imgs | size %}
-      <div class="row mb-md-3">
-        <div class="col{% if size <= 3 %} col-md-{{ size | times: 4 }}{% endif %}">
+      <div class="row mb-sm-3">
+        <div class="col{% if size <= 3 %} col-sm-{{ size | times: 4 }}{% endif %}">
           <div class="card-deck">
           {% for img in page.imgs %}
             <div class="card">
@@ -21,8 +21,8 @@
           </div>
         </div>
       </div>
-      <div class="row mb-md-3">
-        <div class="col{% if forloop.rindex <= 3 %} col-md-{{ forloop.rindex | minus: 1 | times: 4 }}{% endif %}">
+      <div class="row mb-sm-3">
+        <div class="col{% if forloop.rindex <= 3 %} col-sm-{{ forloop.rindex | minus: 1 | times: 4 }}{% endif %}">
           <div class="card-deck">
             {% endif %}
           {% endfor %}
