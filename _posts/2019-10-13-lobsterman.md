@@ -10,6 +10,7 @@ imgs:
   - lobsterman-03.jpg
   - lobsterman-04.jpg
   - lobsterman-05.jpg
+  - lobsterman-06.jpg
 link: 
 ---
 
