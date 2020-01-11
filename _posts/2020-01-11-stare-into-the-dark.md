@@ -14,8 +14,6 @@ imgs:
   - stare-into-the-dark-07.jpg
   - stare-into-the-dark-08.jpg
   - stare-into-the-dark-09.jpg
-link: https://youtu.be/R_HYtFewids
-published: false
 ---
 
 On listening to "Stare Into The Dark" I was struck by the juxtaposition between the energetic, guitar-driven performance versus the bleak, narrative lyrics that tell the story of an insomnia-suffering worker who gets up a 3:30am to wander the streets. I decided to craft two distinct looks to weave these two elements together and emphasise the contrast between them.
