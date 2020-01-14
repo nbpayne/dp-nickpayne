@@ -57,7 +57,8 @@ gulp.task('css', function () {
 gulp.task('jekyll-serve', function () {
   const jekyll = child.spawn('jekyll', [
     'serve', 
-    '--livereload'
+    '--livereload',
+    '--drafts'
   ]);
   const jekyllLogger = (buffer) => {
     buffer.toString()

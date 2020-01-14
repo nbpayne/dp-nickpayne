@@ -2,7 +2,7 @@
         <div class="carousel-inner">
         {% for img in page.imgs %}
           <div class="carousel-item{% if forloop.first %} active{% endif %}">
-            <img src="/img/{{ page.path | remove: "_posts/" | remove: ".md" }}/{{ img }}" class="d-block w-100">
+            <img src="/img/{{ page.path | remove: "_posts/" | remove: "_drafts/" | remove: ".md" }}/{{ img }}" class="d-block w-100">
           </div>
         {% endfor %}
         </div>
@@ -14,7 +14,7 @@
           <div class="card-deck">
           {% for img in page.imgs %}
             <div class="card">
-              <a href="#screenshots" data-slide-to="{{ forloop.index | minus: 1 }}"><img class="card-img-top" src="/img/{{ page.path | remove: "_posts/" | remove: ".md" }}/th/{{ img }}"></a>
+              <a href="#screenshots" data-slide-to="{{ forloop.index | minus: 1 }}"><img class="card-img-top" src="/img/{{ page.path | remove: "_posts/" | remove: "_drafts/" | remove: ".md" }}/th/{{ img }}"></a>
             </div>
             {% assign mod = forloop.index | modulo: 3  %}
             {% if mod == 0 %}
