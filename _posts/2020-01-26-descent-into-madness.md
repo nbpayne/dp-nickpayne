@@ -11,6 +11,7 @@ imgs:
   - descent-into-madness-04.jpg
   - descent-into-madness-05.jpg
   - descent-into-madness-06.jpg
+link: https://youtu.be/VxoPZzseCNk
 ---
 
 “They are faceless and mine is all that's left. A million years of family trees die one person at a time... And time is the lonely sound of this heart ticking towards a twitching time-bomb”
