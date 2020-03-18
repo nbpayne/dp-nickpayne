@@ -1,7 +1,8 @@
 <div class="row justify-content-center">
   <div class="col col-lg-8">
     <form class="needs-validation mb-4" method="POST" action="https://formspree.io/{{ site.email }}" novalidate>
-      <input type="hidden" name="_next" value="{{ site.url }}{{ site.baseurl }}/thanks" />
+      <input type="hidden" name="_next" value="{{ site.url }}{{ site.baseurl }}/thanks">
+      <input type="hidden" name="_subject" value="New submission via {{ site.url}}{{ site.baseurl }}/contact/">
       <div class="form-group">
         <label for="Name">Name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
@@ -39,10 +40,21 @@
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
+          form.classList.add("was-validated");
+        } else {
+          var options = {
+            year: 'numeric', month: 'numeric', day: 'numeric',
+            hour: 'numeric', minute: 'numeric', second: 'numeric',
+            hour12: false,
+            timeZone: 'Australia/Sydney',
+            timeZoneName: 'short'
+          };
+          form[1].value += ' from ' + form[2].value + ' on ' + Intl.DateTimeFormat('en-AU', options).format(Date.now());
+          // event.preventDefault();
+          // event.stopPropagation();
         }
-        form.classList.add('was-validated');
       }, false);
-    });
+    }, false);
   }, false);
 })();
 </script>
