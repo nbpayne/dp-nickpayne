@@ -18,6 +18,6 @@ link: http://dashville.com.au/sky-ball/
 
 In 2020 the Gumball music festival was cancelled. Festival director Magpie Johnson repurposed the Dashville Skyline weekend in October to combine Skyline and Gumball into a smaller scale, COVID safe festival. Accompanying this he launched "Skyball TV" to allow a wider audience to enjoy the amazing music on offer.
 
-Magpie called on me to help shoot interviews of the acts backstage in a makeshift studio with host _Viktoria Bitter_. I lit this outdoor studio with my two tungsten balanced, kino-style DS60/2.5T lights as top light keys. This was complemented with Ikea Basik baton lights as backlights (don't judge me -- these are great value and fit for purpose). We shot in the evenings and then I edited the interviews down during the day to be uploaded to the waiting audience.
+Magpie called on me to help shoot interviews of the acts backstage in a makeshift studio with host _Viktoria Bitter_. I lit this outdoor studio with my two tungsten balanced, kino-style DS60/2.5T lights as top light keys. This was complemented with Ikea Musik baton lights as backlights (don't judge me -- these are great value and really versatile). We shot in the evenings and then I edited the interviews down during the day to be uploaded to the waiting audience.
 
 It was great fun collaborating with Magpie and Viktoria and I look forward to working with these good folks again.
