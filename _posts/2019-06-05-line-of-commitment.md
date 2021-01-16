@@ -12,6 +12,7 @@ imgs:
   - line-of-commitment_1.33.1.jpg
   - line-of-commitment_1.36.1.jpg
 link: 
+published: false
 ---
 
 "Line of Commitment" is a short film currently in production by Concept Films. It explores the nature of commitment 
