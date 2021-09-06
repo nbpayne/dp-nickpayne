@@ -10,6 +10,7 @@ imgs:
   - 4-lives-the-artist.03.jpg
   - 4-lives-the-artist.04.jpg
   - 4-lives-the-artist.05.jpg
+  - 4-lives-the-artist.06.jpg
 link: 
 ---
 “4 Lives / The Music Producer” is the third in a series of interviews with people experiencing differing impacts of the SARS- COV-2 virus. In this film I meet artist Craig Moffat who talks about the impact of COVID on someone living with mental health challenges.
