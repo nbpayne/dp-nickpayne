@@ -5,7 +5,7 @@ layout: default
       <div class="row">
         <div class="col">
 
-          <h4><small class="text-muted">{{ page.categories | join: " / " }}</small></h4>
+          <h4><small class="text-muted">{{ page.date | date: "%b %e, %Y" }} <span class="mx-1">|</span> {{ page.categories | join: " / " }}</small></h4>
           <h3>{{ page.title | smartify }}</h3>
           <p>{{ page.role }}</p>
 
