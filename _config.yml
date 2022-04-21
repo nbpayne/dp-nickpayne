@@ -22,6 +22,7 @@ baseurl: # the subpath of your site, e.g. /blog
 url: 'https://dp.nickpayne.com' # the base hostname & protocol for your site, e.g. http://example.com
 repository: 'nbpayne/dp-nickpayne'
 locale: en_AU
+formid: xnqwgkzg
 
 # Build settings
 markdown: kramdown

@@ -1,6 +1,6 @@
 <div class="row justify-content-center">
   <div class="col col-lg-8">
-    <form class="needs-validation mb-4" method="POST" action="https://formspree.io/{{ site.email }}" novalidate>
+    <form class="needs-validation mb-4" method="POST" action="https://formspree.io/f/{{ site.formid }}" novalidate>
       <input type="hidden" name="_next" value="{{ site.url }}{{ site.baseurl }}/thanks">
       <input type="hidden" name="_subject" value="New submission via {{ site.url}}{{ site.baseurl }}/contact/">
       <div class="form-group">
