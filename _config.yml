@@ -41,3 +41,9 @@ exclude:
   - README.md
   - yarn.lock
 permalink: /:year/:month/:day/:slug
+defaults:
+  -
+    scope:
+      path:            "docs/**/*.*"
+    values:
+      sitemap:         false
