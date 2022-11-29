@@ -34,6 +34,16 @@ Email
 Plain old telephone
 : [+61 407 122 396](tel:+61407122396)
 
+### Organise a meeting
+
+If you'd like to catch up for a chat or to spend some time working together on your project, then click this button to find a time and schedule an in person, or online meeting: 
+
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<p><a class="btn btn-primary" role="button" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/nickpayneandthe'});return false;">Schedule time with me</a></p>
+<!-- Calendly link widget end -->
+
 ### Yet to be released
 
 The following films have not been released to the public yet. Feel free to watch and enjoy them, but _don't_ distribute them to anyone without my permission.
