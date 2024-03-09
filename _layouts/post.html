@@ -7,7 +7,7 @@ layout: default
 
           <h4><small class="text-muted">{{ page.date | date: "%b %e, %Y" }} <span class="mx-1">|</span> {{ page.categories | join: " / " }}</small></h4>
           <h3>{{ page.title | smartify }}</h3>
-          <p>{{ page.role }}</p>
+          <p>{{ page.role | join: " / " }}</p>
 
           {% include posts/carousel.html %}
 

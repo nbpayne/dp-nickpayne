@@ -3,7 +3,7 @@ layout: post
 categories: ['Music Video']
 title: >
   "The Swallow's Song" by Sara O'Connor 
-role: Director / Cinematographer / Editor / Colourist
+role: ['Director','Cinematographer','Editor','Colourist']
 imgs: 
   - the-swallows-song.01.jpg
   - the-swallows-song.02.jpg

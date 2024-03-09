@@ -2,7 +2,7 @@
 layout: post
 categories: ['Music Video']
 title: '"My Darling Kate" by Nick Payne and Katie Brianna'
-role: Producer / Director / Cinematographer / Production Design / Editor / Colourist
+role: ['Director','Cinematographer','Editor','Colourist']
 imgs: 
   - my-darling-kate_1.1.1.jpg
   - my-darling-kate_1.27.1.jpg

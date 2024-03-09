@@ -1,9 +1,9 @@
 ---
 layout: post
-categories: ['Drama','Short Film']
+categories: ['Short Film']
 title: >
   "Line of Commitment" by Concept Films
-role: Cinematographer / Colourist
+role: ['Cinematographer','Colourist']
 imgs: 
   - line-of-commitment_1.11.1.jpg
   - line-of-commitment_1.20.1.jpg

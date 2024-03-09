@@ -1,9 +1,9 @@
 ---
 layout: post
-categories: ['Documentary', 'Short Film']
+categories: ['Documentary']
 title: >
   "4 Lives / The Artist" 
-role: Director / Cinematographer / Editor / Colourist
+role: ['Director','Cinematographer','Editor','Colourist']
 imgs: 
   - 4-lives-the-artist.01.jpg
   - 4-lives-the-artist.02.jpg

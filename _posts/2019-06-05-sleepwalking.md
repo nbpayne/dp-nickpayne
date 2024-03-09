@@ -3,7 +3,7 @@ layout: post
 categories: ['Music Video']
 title: >
   "Sleepwalking" by Sara O'Connor
-role: Cinematographer
+role: ['Cinematographer']
 imgs: 
   - sleepwalking-01.jpg
   - sleepwalking-02.jpg

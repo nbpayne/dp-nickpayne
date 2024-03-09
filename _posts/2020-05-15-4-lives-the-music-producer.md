@@ -1,9 +1,9 @@
 ---
 layout: post
-categories: ['Documentary','Short Film']
+categories: ['Documentary']
 title: >
   "4 Lives / The Music Producer" by Nick Payne
-role: Director / Cinematographer / Editor / Colourist
+role: ['Director','Cinematographer','Editor','Colourist']
 imgs: 
   - 4-lives-the-music-producer-01.jpg
   - 4-lives-the-music-producer-02.jpg

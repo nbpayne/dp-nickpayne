@@ -1,6 +1,35 @@
+
 <nav class="navbar navbar-expand-lg navbar-light">
   <a href="/" class="navbar-brand mb-0 h1">{{ site.title }}</a>
-  <div class="navbar-nav">
-    <a class="nav-item nav-link" href="/contact">Contact</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu">
+          {% assign categories = site.categories | sort %}
+          {% for category in categories %}
+          <a class="dropdown-item" href="/{{ category[0] | slugify | replace: "y", "ie" | append: "s" }}/">{{ category[0] }}</a>
+          {% endfor %}
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          Roles
+        </a>
+        <div class="dropdown-menu">
+          {% for role in site.roles %}
+          <a class="dropdown-item" href="/{{ role | slugify }}/">{{ role }}</a>
+          {% endfor %}
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
+    </ul>
   </div>
 </nav>
