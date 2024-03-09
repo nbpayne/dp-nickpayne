@@ -47,3 +47,10 @@ defaults:
       path:            "docs/**/*.*"
     values:
       sitemap:         false
+roles:
+  - Writer
+  - Director
+  - Cinematographer
+  - Gaffer
+  - Editor
+  - Colourist
