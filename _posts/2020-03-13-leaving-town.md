@@ -1,9 +1,9 @@
 ---
 layout: post
-categories: ['Drama','Short Film']
+categories: ['Short Film']
 title: >
   "Leaving Town" by Phil Masterson
-role: Cinematographer / Editor / Colourist
+role: ['Cinematographer','Editor','Colourist']
 imgs: 
   - leaving-town-01.jpg
   - leaving-town-02.jpg
