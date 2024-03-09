@@ -3,7 +3,7 @@ layout: post
 categories: ['Documentary']
 title: >
   "Lobsterman" by Darrin Baker
-role: Cinematographer
+role: ['Cinematographer']
 imgs: 
   - lobsterman-01.jpg
   - lobsterman-02.jpg

@@ -1,9 +1,9 @@
 ---
 layout: post
-categories: ['Music Video','Documentary']
+categories: ['Music Video']
 title: >
   "Traitor of Dee Why" 
-role: Cinematographer / Editor / Colourist / Motion Graphics
+role: ['Cinematographer','Editor','Colourist','Motion Graphics']
 imgs: 
   - traitor-of-dee-why-01.jpg
   - traitor-of-dee-why-02.jpg

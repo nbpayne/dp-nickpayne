@@ -3,7 +3,7 @@ layout: post
 categories: ['Music Video']
 title: >
   "Loneliness" by Paddy McHugh
-role: Editor / Colourist
+role: ['Editor','Colourist']
 imgs: 
   - loneliness-01.jpg
   - loneliness-02.jpg

@@ -3,7 +3,7 @@ layout: post
 categories: ['Music Video']
 title: >
   "Springboard" by Spencer Spark
-role: Cinematographer
+role: ['Cinematographer']
 imgs: 
   - springboard.01.jpg
   - springboard.02.jpg
