@@ -18,6 +18,7 @@ link: https://youtu.be/KNO6TX79sC0
 ---
 
 The brief for Sarah O'Connor's music video "Sleepwalking" called for three sets with three distinct looks.
+{: .lead }
 
 The stage set was achieved with fresnel back lighting and a fill light against a red velet theatre drape. Two smoke 
 machines provided atmosphere to imply a smoke-filled jazz club. The dinner scene utilised a dimmed practical, a cooler

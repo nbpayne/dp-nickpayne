@@ -21,6 +21,7 @@ link: https://youtu.be/QAtONVZtL5I
 ---
 
 I recently had the chance to light the music video for the debut single from Michael Carpenter and The Banks Brothers -- "Honky Tonker". The shoot occured at Desk and Studio ([deskandstudio.com](https://www.deskandstudio.com/){: target="_blank"}), which we styled to be a cramped inner city apartment in which three musos sat round jamming.
+{: .lead }
 
 I top-lit the scene with a skirted, tungesten colour LED fixture in order to light the subjects, but have the background fall quickly off into darkness. Another tungsten coloured LED fixture bounced of a cove on the floor to fill in the dark shadows under their big hat brims. A daylight coloured fixture bounced off the ceiling to bring the ambient light up in order to get details in the shadow and blue to them to imitate moonlight coming in from outside. The sodium vapour street lamps create an ugly orange colour that can be seen out the windows.
 

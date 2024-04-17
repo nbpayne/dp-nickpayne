@@ -21,6 +21,7 @@ imgs:
 ---
 
 "Leaving Town" is short film that is written and directed by Phil Masterson. It's a _film noir_ crime drama about a couple contemplating leaving town to escape the consequences of their dealing with organised crime.
+{: .lead }
 
 I shot this on the Black Magic Pocket Cinema 6K camera to take advantage of cinema quality colour science in a small form factor that supported the pace of shooting required by a low budget production. Extensive use of a Tiffen Glimmer Glass 3 filter softens skin towns, blows out point light sources, and channels a 1950s film emulsion look. An aspect ration of 2.4:1 was also chosen to further reminisce on 1950s cinema.
 

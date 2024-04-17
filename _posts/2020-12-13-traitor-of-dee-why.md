@@ -17,6 +17,7 @@ link: https://youtu.be/npRkDdmMucU
 ---
 
 Chris Lobb (AKA “Lobsterman”) is an underground musician with a legacy of over 100 releases spanning the last 40 years. “Lobsterman: Tales of an Avant Gardener” is an upcoming documentary by Darrin Baker, which covers the life and development of this outsider artist.
+{: .lead }
 
 Darrin approached me for the role of Cinematographer for this work, which has included shooting interviews as well as accompanying footage to unlock the stories inherit in Lobsterman’s songs.
 

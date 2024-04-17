@@ -14,6 +14,7 @@ link: https://youtu.be/qhZcEh0q3mM
 
 As well as shooting film I'm also a musician in my other time. I made this music video for my song "My Darling Kate",
 which involved directing, lighting, editing, and colouring it.
+{: .lead }
 
 I built the look up using fresnels in a theatre-style approach. Two flooded fresnels cross lit the scene to provide an 
 even wash. Another two spotted fresnel brightened up the centre of the scene to draw attention to the main talent. A 
