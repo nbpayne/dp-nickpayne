@@ -9,9 +9,13 @@ h1 {
 }
 
 blockquote {
-  border-left: 0.5rem solid #ccc;
+  background-image: url(../img/quote-left.svg);
+  background-position: left top;
+  background-repeat: no-repeat;
   font-size: 1.2rem;
-  padding-left: 0.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-left: 4rem;
 }
 
 // Components
