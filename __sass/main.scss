@@ -8,18 +8,25 @@ h1 {
   text-transform: uppercase;
 }
 
+blockquote {
+  border-left: 0.5rem solid #ccc;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+}
+
 // Components
-.card {
-    border: none;
-}
+.card-noborder {
+  border: none;
 
-.card-body {
-    padding: 1.25rem 0;
-}
+  .card-body {
+      padding: 1.25rem 0;
+  }
 
-.card-img-top {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  .card-img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
 }
 
 .card-title a {

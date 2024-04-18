@@ -1,20 +1,17 @@
 ---
-layout: default
+layout: page
 ---
-      <div class="row mb-3">
-        <div class="col-lg-8 order-lg-last mb-3">
-          <img src="/img/np-01.jpg" class="img-fluid" />
-        </div>
-        <div class="col-lg-4">
-          {{ content }}
-        </div>
-      </div>
-      <h3>Recent Work</h3>
-      {% assign size = site.posts | size %}
+
+{{ content }}
+
+{% assign posts = site.categories[page.displayCategory] %}
+
+      <h3>Recent {{ page.displayCategory | append: "s" | replace: "ys", "ies" }}</h3>
+      {% assign size = posts | size %}
       <div class="row mb-md-3">
         <div class="col{% if size <= 3 %} col-md-{{ size | times: 4 }}{% endif %}">
           <div class="card-deck">
-          {% for post in site.posts %}
+          {% for post in posts %}
             <div class="card card-noborder">
               <a href="{{ post.url }}"><img class="card-img-top" src="/img/{{ post.path | remove: "_posts/" | remove: "_drafts/" | remove: ".md" }}/th/{{ post.imgs | first }}"></a>
               <div class="card-body">
@@ -22,7 +19,7 @@ layout: default
                 <h5 class="card-title mb-2">
                   {{ post.title | smartify }}
                 </h5>
-                <p class="card-text">{{ post.role }}</p>
+                <p class="card-text">{{ post.role | join: " / " }}</p>
               </div>
             </div>
             {% assign mod = forloop.index | modulo: 3  %}
