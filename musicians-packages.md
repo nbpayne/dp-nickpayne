@@ -21,7 +21,10 @@ This not only gives you your "hero" content, but enough ancillary content to kee
 ### The Packages
 
 {% capture fieldRecording %}
+We find a cool location and record you playing a bunch of songs live using professional audio and video gear. We mix the audio and cut the videos so you can create a Youtube playlist to go viral and even release the audio as an EP or put them on Spotify.
+
 - 4 live performance videos
+- Audio recordings of the songs you can release as an EP
 - 4 x 3 minute interview videos about the song and the making of the music video
 - 12 reels to support the promotion of your video for three months
 - 9-12 stills to use in posts, posters, and other graphic design
@@ -30,6 +33,8 @@ This not only gives you your "hero" content, but enough ancillary content to kee
 {% endcapture %}
 
 {% capture musicVideoEntry %}
+Complete production of a professional music video. Includes brainstorming a great idea, pre-production, shooting and post. We keep cost down by limiting shooting to a single location.
+
 - Music video shot in 1 location
 - 10 minute Behind The Scenes interview video about the song and the making of the music video
 - 12 reels to support the promotion of your video for three months
@@ -38,6 +43,8 @@ This not only gives you your "hero" content, but enough ancillary content to kee
 {% endcapture %}
 
 {% capture musicVideoMid %}
+Complete production of a professional music video. Includes brainstorming a great idea, pre-production, shooting and post. We give ourselves more room for creativity by shooting footage in two different locations.
+
 - Music video shot in 2 locations
 - 10 minute Behind The Scenes interview video about the song and the making of the music video
 - 12 reels to support the promotion of your video for three months
@@ -46,6 +53,8 @@ This not only gives you your "hero" content, but enough ancillary content to kee
 {% endcapture %}
 
 {% capture musicVideoPremium %}
+Complete production of a professional music video. Includes brainstorming a great idea, pre-production, shooting and post. We go all out to make something truly great here and allow for scenes shot in three different locations.
+
 - Music video shot in 3 locations
 - 10 minute Behind The Scenes interview video about the song and the making of the music video
 - 12 reels to support the promotion of your video for three months
