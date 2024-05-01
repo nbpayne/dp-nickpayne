@@ -1,58 +1,90 @@
-var gulp = require('gulp');
-var child = require('child_process');
-var csslint = require('gulp-csslint');
-var cleanCSS = require('gulp-clean-css');
-var del = require('del');
-var gulpif = require('gulp-if');
-var jshint = require('gulp-jshint');
-var gulputil = require('gulp-util');
-var lazypipe = require('lazypipe');
-var log = require('gutil-color-log');
-var merge = require('merge-stream');
-var rename = require('gulp-rename');
-var sass = require('gulp-sass')(require('sass'));
-var sourcemaps = require('gulp-sourcemaps');
-var stylish = require('csslint-stylish');
-var uglify = require('gulp-uglify');
-var useref = require('gulp-useref');
-var wiredep = require('wiredep').stream;
+const { 
+  dest,
+  parallel, 
+  src,
+  series,
+  watch
+} = require('gulp');
+const child = require('child_process');
+const clean = require('gulp-clean');
+const cleanCSS = require('gulp-clean-css');
+const csslint = require('gulp-csslint');
+const gulpif = require('gulp-if');
+const jshint = require('gulp-jshint');
+const lazypipe = require('lazypipe');
+const log = require('gutil-color-log');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass')(require('sass'));
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const useref = require('gulp-useref');
+const wiredep = require('gulp-wiredep');
 
-// Clean out files
-gulp.task('clean', function () {
-  return del([
+// Clean up old files
+function cleanUp() {
+  return src([
     '_includes/head.html', 
     '_includes/foot.html', 
     'css/**/*.*', 
     'js/**/*.*'
-  ]);
-});
+  ], { read: false, allowEmpty: true })
+    .pipe(clean());
+}
 
-// Build css files
-gulp.task('css', function () {
-  return merge(
-    // Build vendor css files
-    gulp.src('__sass/vendor/*.scss')
-      .pipe(sass())
-      .pipe(sourcemaps.init())
-      .pipe(cleanCSS())
-      .pipe(rename({suffix:'.min'}))
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('css/vendor')),
-    // Build app css files
-    gulp.src('__sass/*.scss')
-      .pipe(sass())
-      .pipe(csslint())
-      .pipe(csslint.formatter(stylish))
-      .pipe(sourcemaps.init())
-      .pipe(cleanCSS())
-      .pipe(rename({suffix:'.min'}))
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('css'))
-  );
-});
+// Compile Vendor CSS
+function vendorCss() {
+  return src('__sass/vendor/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(cleanCSS())
+    .pipe(rename({suffix:'.min'}))
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest('css/vendor'))
+}
+
+// Compile custom CSS
+function customCss() {
+  return src('__sass/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(csslint())
+    .pipe(csslint.formatter())
+    .pipe(sourcemaps.write())
+    .pipe(cleanCSS())
+    .pipe(rename({suffix:'.min'}))
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest('css'))
+}
+
+// Wire bower dependencies
+function wireDependencies() {
+  return src('__includes/*.html')
+    .pipe(wiredep())
+    .pipe(dest('__includes'));
+}
+
+// Build javascript files
+function js() {
+  // Lint, sourcemap, and uglify final js files
+  var lintjs = lazypipe()
+    .pipe(jshint)
+    .pipe(jshint.reporter, 'jshint-stylish');
+
+  var processjs = lazypipe()
+    .pipe(sourcemaps.init)
+    .pipe(uglify)
+    .pipe(sourcemaps.write, '.')
+    .pipe(dest, '.');
+
+  return src('__includes/*.html')
+    .pipe(useref())
+    .pipe(gulpif('*.js', processjs()))
+    .pipe(gulpif('*.html', dest('_includes')));
+};
 
 // Run `jekyll serve`
-gulp.task('jekyll-serve', function () {
+function jekyllServe() {
   const jekyll = child.spawn('jekyll', [
     'serve', 
     '--livereload',
@@ -66,55 +98,24 @@ gulp.task('jekyll-serve', function () {
   };
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
-});
-
-// Build javascript files
-gulp.task('js', function () {
-  // Lint, sourcemap, and uglify final js files
-  // var lintjs = lazypipe()
-  //   .pipe(jshint)
-  //   .pipe(jshint.reporter, 'jshint-stylish');
-
-  var processjs = lazypipe()
-    .pipe(sourcemaps.init)
-    .pipe(uglify)
-    .pipe(sourcemaps.write, '.')
-    .pipe(gulp.dest, '.');
-
-  return gulp.src('__includes/*.html')
-    .pipe(useref())
-    .pipe(gulpif('*.js', processjs()))
-    .pipe(gulpif('*.html', gulp.dest('_includes')));
-});
+};
 
 // Watch for file changes
-gulp.task('watch', function () {
+function watchFiles() {
   // Watch files
-  gulp.watch('__sass/**/*.scss', gulp.series('css'));
-  gulp.watch(['__includes/*.html', '__js/**/*.js'], gulp.series('js'));
-});
-
-// Wire bower dependencies
-gulp.task('wiredep', function() {
-  return gulp.src('__includes/*.html')
-    .pipe(wiredep())
-    .pipe(gulp.dest('__includes'));
-});
-
+  watch('__sass/vendor/*.scss', series(vendorCss));
+  watch('__sass/*.scss', series(customCss));
+  watch(['__includes/*.html', '__js/**/*.js'], series(js));
+};
 
 // --------------------------------------------------------------------------------------------------------------------
 // Meta-tasks
-// - defeault: same as `serve`
-// - serve: compile all assets, and start jekyll
+// - default: compile all assets, and start jekyll
 // --------------------------------------------------------------------------------------------------------------------
 
-gulp.task('serve',
-  gulp.series(
-    'clean', 
-    gulp.parallel('css', 'wiredep'), 
-    'js',
-    gulp.parallel('jekyll-serve', 'watch')
-  )
+exports.default = series(
+  cleanUp,
+  parallel(vendorCss, customCss, wireDependencies),
+  js,
+  parallel(jekyllServe, watchFiles)
 );
-
-gulp.task('default', gulp.series('serve'));
