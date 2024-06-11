@@ -72,10 +72,6 @@ Complete production of a professional music video. Includes brainstorming a grea
     </div>
   </div>
 
-</div>
-
-<div class="card-deck">
-
   <div class="card mb-3">
     <div class="card-body">
       <h4 class="card-title">Music video entry level</h4>
@@ -84,7 +80,9 @@ Complete production of a professional music video. Includes brainstorming a grea
     </div>
   </div>
 
+</div>
 
+<div class="card-deck">
 
   <div class="card mb-3">
     <div class="card-body">
