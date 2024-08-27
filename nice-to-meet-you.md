@@ -18,7 +18,8 @@ There's some useful stuff below and feel free to browse the [rest of my website]
 A bit more about me:
 
 - [My CV](https://docs.google.com/document/d/1NyPb5wqSE8JerlxA8x-j1cQA-B7BV8EFsJM1PiMa7no/edit?usp=sharing){: target="_blank" }
-- [My equipment list](https://docs.google.com/document/d/1ZROWDbxd8U8wGcEHyfjgKvt059cYvvS5dDBJY3q6rn8/edit?usp=sharing){: target="_blank" }
+- [Camera equipment list](https://docs.google.com/document/d/1ZROWDbxd8U8wGcEHyfjgKvt059cYvvS5dDBJY3q6rn8/edit?usp=sharing){: target="_blank" }
+- [Lighting Packages](https://docs.google.com/document/d/1IMnAsQd0n3hguSM59qdTJEnu7kFw571zQDxUmL4GjcQ/edit?usp=sharing){: target="_blank" }
 
 ### How to get in contact with me
 
