@@ -9,7 +9,7 @@ Hi there. I'm Nick Payne and it's nice to meet you.
 
 If you've found your way here it's because I've met you recently and gave you this link. This page contains some private stuff I don't just share with anybody. So enjoy and please reach out for a chat over a cup of coffee or a beer.
 
-If you're looking for a cinematographer, gaffer, 1st AC, 2nd AC, lighting assistant, colourist or DIT/Data Wrangler then I'm keen to work with you.
+If you're looking for a cinematographer, gaffer, lighting crew, or colourist then I'm keen to work with you.
 
 There's some useful stuff below and feel free to browse the [rest of my website](/) to see examples of my work.
 
