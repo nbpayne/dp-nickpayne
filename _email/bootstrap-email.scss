@@ -1,0 +1,11 @@
+$font-size-base:         13px;
+$font-family-base: 'Verdana', Helvetica, Arial, sans-serif;
+$font-faces: (
+  (
+    "font-family": 'Verdana',
+    "src": local('Verdana'),
+    "font-style": normal
+  ),
+);
+
+//= @import bootstrap-email;
