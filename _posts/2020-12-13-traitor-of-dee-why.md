@@ -4,6 +4,7 @@ categories: ['Music Video','Documentary']
 title: >
   "Traitor of Dee Why" 
 role: Cinematographer / Editor / Colourist / Motion Graphics
+homeImg: traitor-of-dee-why-01.jpg
 imgs: 
   - traitor-of-dee-why-01.jpg
   - traitor-of-dee-why-02.jpg

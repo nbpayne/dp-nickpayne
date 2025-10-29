@@ -4,6 +4,7 @@ categories: ['Documentary', 'Short Film']
 title: >
   "4 Lives / The Artist" 
 role: Director / Cinematographer / Editor / Colourist
+homeImg: 4-lives-the-artist.01.jpg
 imgs: 
   - 4-lives-the-artist.01.jpg
   - 4-lives-the-artist.02.jpg

@@ -4,6 +4,7 @@ categories: ['Short Film']
 title: >
   "Night Whispers" by Yash Kanesan
 role: Gaffer
+homeImg: night-whispers.00.jpg
 imgs: 
   - night-whispers.01.jpg
   - night-whispers.02.jpg

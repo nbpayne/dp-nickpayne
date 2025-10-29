@@ -4,6 +4,7 @@ categories: ['Music Video']
 title: >
   "Springboard" by Spencer Spark
 role: Cinematographer
+homeImg: springboard.00.jpg
 imgs: 
   - springboard.01.jpg
   - springboard.02.jpg

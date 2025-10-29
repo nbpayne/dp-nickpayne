@@ -4,6 +4,7 @@ categories: ['Documentary','Short Film']
 title: >
   "4 Lives / The Music Producer" by Nick Payne
 role: Director / Cinematographer / Editor / Colourist
+homeImg: 4-lives-the-music-producer-01.jpg
 imgs: 
   - 4-lives-the-music-producer-01.jpg
   - 4-lives-the-music-producer-02.jpg

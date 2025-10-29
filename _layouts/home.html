@@ -16,7 +16,7 @@ layout: default
           <div class="card-deck">
           {% for post in site.posts %}
             <div class="card card-noborder">
-              <a href="{{ post.url }}"><img class="card-img-top" src="/img/{{ post.path | remove: "_posts/" | remove: "_drafts/" | remove: ".md" }}/th/{{ post.imgs | first }}"></a>
+              <a href="{{ post.url }}"><img class="card-img-top" src="/img/{{ post.path | remove: "_posts/" | remove: "_drafts/" | remove: ".md" }}/th/{{ post.homeImg }}"></a>
               <div class="card-body">
                 <h6 class="card-subtitle text-muted">{{ post.date | date: "%b %e, %Y" }} <span class="mx-1">|</span> {{ post.categories | join: " / " }}</h6>
                 <h5 class="card-title mb-2">

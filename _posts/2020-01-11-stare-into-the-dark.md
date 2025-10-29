@@ -4,6 +4,7 @@ categories: ['Music Video']
 title: >
   "Stare Into The Dark" by Sam Newton
 role: Director / Cinematographer / Editor / Colourist
+homeImg: stare-into-the-dark-01.jpg
 imgs: 
   - stare-into-the-dark-01.jpg
   - stare-into-the-dark-02.jpg

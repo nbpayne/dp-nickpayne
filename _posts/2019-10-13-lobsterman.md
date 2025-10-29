@@ -4,6 +4,7 @@ categories: ['Documentary']
 title: >
   "Lobsterman" by Darrin Baker
 role: Cinematographer
+homeImg: lobsterman-01.jpg
 imgs: 
   - lobsterman-01.jpg
   - lobsterman-02.jpg

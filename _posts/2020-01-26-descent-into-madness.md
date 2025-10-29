@@ -4,6 +4,7 @@ categories: ['Drama','Short Film']
 title: >
   "Descent Into Madness" by Craig Moffatt and Paul Matereke
 role: Cinematographer / Editor / Colourist
+homeImg: descent-into-madness-01.jpg
 imgs: 
   - descent-into-madness-01.jpg
   - descent-into-madness-02.jpg

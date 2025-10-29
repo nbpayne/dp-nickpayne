@@ -4,6 +4,7 @@ categories: ['Documentary']
 title: >
   "Skyball TV" interviews with Viktoria Bitter
 role: Cinematographer / Editor / Colourist
+homeImg: skyball-tv-01.jpg
 imgs: 
   - skyball-tv-01.jpg
   - skyball-tv-02.jpg

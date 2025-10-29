@@ -4,6 +4,7 @@ categories: ['Music Video']
 title: >
   "Loneliness" by Paddy McHugh
 role: Editor / Colourist
+homeImg: loneliness-01.jpg
 imgs: 
   - loneliness-01.jpg
   - loneliness-02.jpg

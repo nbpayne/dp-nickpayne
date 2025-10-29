@@ -4,6 +4,7 @@ categories: ['Short Film']
 title: >
   "A Little Strange" by Kieton Beilby
 role: Gaffer
+homeImg: a-little-strange.01.jpg
 imgs: 
   - a-little-strange.01.jpg
   - a-little-strange.02.jpg
