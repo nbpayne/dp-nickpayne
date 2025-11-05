@@ -3,7 +3,7 @@ layout: post
 categories: ['Music Video']
 title: >
   "Brodie Buttons and Dusty Rusty" by The Crooked Tune Distillery
-role: Cinematographer
+role: Cinematographer / Editor / Colourist
 homeImg: stillhouse-sessions.01.jpg
 imgs: 
   - stillhouse-sessions.01.jpg
