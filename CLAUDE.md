@@ -21,7 +21,7 @@ gulp
 bundle exec jekyll serve --livereload --drafts --future
 ```
 
-There is no lint or test command — CSS is linted as part of the Gulp `css` task via `gulp-csslint`, and JS is linted via `gulp-jshint`.
+There is no lint or test command — CSS is linted as part of the Gulp `css` task via `gulp-csslint`, and JS is linted via `gulp-jshint`. Only the default task is exported from `gulpfile.js`; there are no individually runnable `gulp css` / `gulp js` commands.
 
 ## Asset pipeline
 
@@ -60,9 +60,26 @@ published: true
 3. Place thumbnails in `img/YYYY-MM-DD-slug/th/` — the home page grid and carousel thumbnails are served from `th/`.
 4. The `homeImg` thumbnail (`th/slug.00.jpg`) is shown on the home page card; it does **not** need to be in the `imgs` list.
 
+## Layouts
+
+| Layout | Use for |
+|---|---|
+| `default` | Base wrapper (nav + footer). Rarely used directly. |
+| `home` | Index page — bio + 3-column post grid. |
+| `post` | Individual project — Bootstrap carousel + thumbnail strip. |
+| `category` | Filtered post grid. Requires `displayCategory: Music Video` (or similar) in front matter. |
+| `page` | Plain Markdown content. |
+| `two-col` | Two-column layout. |
+
 ## Jekyll config notes
 
 - Site is served from `https://dp.nickpayne.com` with no `baseurl`.
 - Permalink format: `/:year/:month/:day/:slug`.
 - Jekyll is run with `--future` in development so future-dated posts are visible locally before they go live.
 - `docs/**` pages are excluded from the sitemap.
+- Contact form uses Formspree (`formid: xnqwgkzg` in `_config.yml`).
+
+## Other directories
+
+- `_email/` — standalone Bootstrap Email templates; not part of the Jekyll build.
+- `docs/` — excluded from the sitemap; used for internal/reference pages.
