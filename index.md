@@ -4,8 +4,8 @@ layout: home
 
 {{ site.description }}{: .lead }
 
-From shooting silent Super 8 in high school through to Super VHS in the 90's and now experienced in digital capture, editing, and colour grading using DaVinci Resolve.
+Nick works closely with directors and producers to develop a visual language that serves the story, and leads the camera, grip, and lighting departments with the same attention to preparation and craft.
 
-Graduate of Australian Film Television and Radio School (AFTRS) "Lighting Intensive" Short Course, Blackmagic Design "DaVinci Resolve 16 Certified End User" and "DaVinci Resolve 16: Color Correction Certified End User", Arri Academy "Certified Online Training for Camera Systems" and "Certified Online Training for Large Format Camera Systems".
+He is a published contributor to Australian Cinematographer Magazine, AFTRS, Blackmagic Design and Arri trained, and founder of the _Life on the Film Set_ podcast. Nick brings a deep understanding of both the technical and human sides of filmmaking to every project.
 
-_Available for cinematographer, gaffer, lighting assist, and colourist roles. Please [get in contact](/contact)._
+_If you're developing a project, I'd love to [hear from you](/contact)._
