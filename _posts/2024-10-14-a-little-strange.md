@@ -14,7 +14,7 @@ imgs:
   - a-little-strange.06.jpg
   - a-little-strange.07.jpg
   - a-little-strange.08.jpg
-link: 
+link: https://youtu.be/4PeawWaa6zg
 ---
 
 I had an amazing three days working as gaffer on Kieton Beilby's latest short --- A Little Strange --- which was written by Damian Overton and shot by Matt Gorrie. The film was made especially for the Smart Phone Film Festival 2024 (SF3) and was shot on an iPhone 15 Pro Max. It has been selected for screening at the Gala Final.
