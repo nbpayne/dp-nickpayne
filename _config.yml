@@ -40,6 +40,7 @@ exclude:
   - node_modules
   - package.json
   - README.md
+  - CLAUDE.md
   - yarn.lock
 permalink: /:year/:month/:day/:slug
 defaults:
