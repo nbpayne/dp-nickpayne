@@ -8,24 +8,12 @@
         </div>
       </div>
 
-      {% assign size = page.imgs | size %}
-      <div class="row mb-sm-3">
-        <div class="col{% if size <= 3 %} col-sm-{{ size | times: 4 }}{% endif %}">
-          <div class="card-deck">
-          {% for img in page.imgs %}
+      <div class="row row-cols-3 g-2 mb-3">
+        {% for img in page.imgs %}
+          <div class="col">
             <div class="card card-noborder">
-              <a href="#screenshots" data-slide-to="{{ forloop.index | minus: 1 }}"><img class="card-img-top" src="/img/{{ page.path | remove: "_posts/" | remove: "_drafts/" | remove: ".md" }}/th/{{ img }}"></a>
+              <a href="#screenshots" data-bs-target="#screenshots" data-bs-slide-to="{{ forloop.index | minus: 1 }}"><img class="card-img-top" src="/img/{{ page.path | remove: "_posts/" | remove: "_drafts/" | remove: ".md" }}/th/{{ img }}"></a>
             </div>
-            {% assign mod = forloop.index | modulo: 3  %}
-            {% if mod == 0 %}
           </div>
-        </div>
-      </div>
-      <div class="row mb-sm-3">
-        <div class="col{% if forloop.rindex <= 3 %} col-sm-{{ forloop.rindex | minus: 1 | times: 4 }}{% endif %}">
-          <div class="card-deck">
-            {% endif %}
-          {% endfor %}
-          </div>
-        </div>
+        {% endfor %}
       </div>

@@ -62,41 +62,45 @@ Complete production of a professional music video. Includes brainstorming a grea
 - A 3 month release plan
 {% endcapture %}
 
-<div class="card-deck">
+<div class="row row-cols-1 row-cols-md-2 g-3 mb-3">
 
-  <div class="card mb-3">
-    <div class="card-body">
-      <h4 class="card-title">Live performance/field recording</h4>
-      <p class="card-text display-4">$ 1,380</p>
-      {{ fieldRecording | markdownify }}
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h4 class="card-title">Live performance/field recording</h4>
+        <p class="card-text display-4">$ 1,380</p>
+        {{ fieldRecording | markdownify }}
+      </div>
     </div>
   </div>
 
-  <div class="card mb-3">
-    <div class="card-body">
-      <h4 class="card-title">Music video entry level</h4>
-      <p class="card-text display-4">$ 2,300</p>
-      {{ musicVideoEntry | markdownify }}
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h4 class="card-title">Music video entry level</h4>
+        <p class="card-text display-4">$ 2,300</p>
+        {{ musicVideoEntry | markdownify }}
+      </div>
     </div>
   </div>
 
-</div>
-
-<div class="card-deck">
-
-  <div class="card mb-3">
-    <div class="card-body">
-      <h4 class="card-title">Music Video mid level</h4>
-      <p class="card-text display-4">$ 4,000</p>
-      {{ musicVideoMid | markdownify }}
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h4 class="card-title">Music Video mid level</h4>
+        <p class="card-text display-4">$ 4,000</p>
+        {{ musicVideoMid | markdownify }}
+      </div>
     </div>
   </div>
 
-  <div class="card mb-3">
-    <div class="card-body">
-      <h4 class="card-title">Music Video Premium</h4>
-      <p class="card-text display-4">$ 5,700</p>
-      {{ musicVideoPremium | markdownify }}
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h4 class="card-title">Music Video Premium</h4>
+        <p class="card-text display-4">$ 5,700</p>
+        {{ musicVideoPremium | markdownify }}
+      </div>
     </div>
   </div>
 

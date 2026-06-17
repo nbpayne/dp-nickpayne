@@ -1,6 +1,6 @@
 _site/**
-bower_components/**
 node_modules/**
+.yarn/install-state.gz
 .DS_Store
 _email/.sass-cache/**
 _email/compiled/
