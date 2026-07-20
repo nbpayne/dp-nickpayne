@@ -15,7 +15,11 @@ layout: default
 
           <p class="h4 text-center">
           {% if page.link %}
-            Watch {{ page.title }}<br />
+            {% if page.linkCopy %}
+              {{ page.linkCopy }}<br />
+            {% else %}
+              Watch {{ page.title }}<br />
+            {% endif %}
             <a href="{{ page.link }}" target="_blank">{{ page.link }}</a>
           {% else %}
             {{ page.title }} coming soon
