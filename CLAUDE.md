@@ -8,33 +8,46 @@ A Jekyll-based cinematography portfolio site for Nick Payne (dp.nickpayne.com). 
 
 ## Commands
 
-```bash
-# Install dependencies (first time)
-bundle install
-yarn install
-bower install
-
-# Develop (compiles assets, starts Jekyll with livereload at http://127.0.0.1:4000)
-gulp
-
-# Jekyll only (no asset compilation)
-bundle exec jekyll serve --livereload --drafts --future
+**Install dependencies (first time):**
+```sh
+bundle install   # Jekyll and Ruby gems
+yarn             # Node/Gulp dev tools + client-side deps (Bootstrap, jQuery)
 ```
 
-There is no lint or test command — CSS is linted as part of the Gulp `css` task via `gulp-csslint`, and JS is linted via `gulp-jshint`. Only the default task is exported from `gulpfile.js`; there are no individually runnable `gulp css` / `gulp js` commands.
+**Develop (build + serve + watch, livereload at http://127.0.0.1:4000):**
+```sh
+gulp
+```
+
+**Build + serve (no file watching):**
+```sh
+gulp build
+```
+
+**Watch CSS/JS only (Jekyll already running):**
+```sh
+gulp liveReload
+```
+
+The dev server runs with `--livereload`, `--drafts`, and `--future` flags.
+
+There is no separate lint or test command — ESLint runs on `__js/**/*.js` as part of the `lintJS` Gulp task and fails the build on errors.
 
 ## Asset pipeline
 
-Gulp manages a two-layer source → output system. **Never edit files in `css/`, `js/`, or `_includes/head.html` / `_includes/foot.html` directly** — they are build artefacts.
+The Gulp pipeline runs in this order: **clean → css → lintJS → js → jekyllServe**. `gulp liveReload` watches `__sass/` and `__js/` and re-runs the relevant tasks on change.
+
+**Never edit files in `css/`, `js/`, or `_includes/head.html` / `_includes/foot.html` directly** — they are build artefacts / hand-authored (no longer Gulp-generated).
 
 | Edit here | Gets built to |
 |---|---|
-| `__sass/*.scss` | `css/*.min.css` |
+| `__sass/*.scss` | `css/main.css`, `css/main.min.css` |
 | `__sass/vendor/*.scss` | `css/vendor/*.min.css` |
-| `__js/main.js` | `js/` (via useref in `__includes/`) |
-| `__includes/head.html`, `foot.html` | `_includes/head.html`, `foot.html` |
+| `__js/main.js` | `js/app.min.js` |
+| `node_modules/jquery` | `js/vendor.min.js` |
+| `node_modules/bootstrap` | `js/bootstrap.min.js` |
 
-Bower dependencies are injected into `__includes/` by `gulp wiredep`, then the built result is copied to `_includes/`.
+Bootstrap and jQuery are installed as Yarn dependencies (`package.json`) and bundled directly from `node_modules` — there is no Bower step. ESLint config lives in `eslint.config.js` (flat config format).
 
 ## Adding a new post
 

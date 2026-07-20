@@ -1,92 +1,69 @@
-const { 
-  dest,
-  parallel, 
-  src,
-  series,
-  watch
-} = require('gulp');
-const child = require('child_process');
-const clean = require('gulp-clean');
-const cleanCSS = require('gulp-clean-css');
-const csslint = require('gulp-csslint');
-const gulpif = require('gulp-if');
-const jshint = require('gulp-jshint');
-const lazypipe = require('lazypipe');
-const log = require('gutil-color-log');
-const rename = require('gulp-rename');
-const sass = require('gulp-sass')(require('sass'));
-const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
-const useref = require('gulp-useref');
-const wiredep = require('gulp-wiredep');
+import { dest, src, series, watch } from 'gulp';
+import { deleteSync } from 'del';
+import gulpSassPlugin from 'gulp-sass';
+import * as dartSass from 'sass';
+import cleanCSS from 'gulp-clean-css';
+import rename from 'gulp-rename';
+import eslint from 'gulp-eslint-new';
+import concat from 'gulp-concat';
+import merge from 'merge-stream';
+import terser from 'gulp-terser';
+import { spawn } from 'child_process';
+import chalk from 'chalk';
 
-// Clean up old files
-function cleanUp() {
-  return src([
-    '_includes/head.html', 
-    '_includes/foot.html', 
-    'css/**/*.*', 
+const sass = gulpSassPlugin(dartSass);
+
+// Delete files that will be regenerated
+function clean(cb) {
+  console.log("Deleting files...");
+  let deletedFiles = deleteSync([
+    'css/**/*.*',
     'js/**/*.*'
-  ], { read: false, allowEmpty: true })
-    .pipe(clean());
+  ], { dryRun: false });
+  console.log(deletedFiles);
+  cb();
 }
 
-// Compile Vendor CSS
-function vendorCss() {
-  return src('__sass/vendor/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.write())
-    .pipe(cleanCSS())
-    .pipe(rename({suffix:'.min'}))
-    .pipe(sourcemaps.write('.'))
-    .pipe(dest('css/vendor'))
-}
-
-// Compile custom CSS
-function customCss() {
-  return src('__sass/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(csslint())
-    .pipe(csslint.formatter())
-    .pipe(sourcemaps.write())
-    .pipe(cleanCSS())
-    .pipe(rename({suffix:'.min'}))
-    .pipe(sourcemaps.write('.'))
+// Lint, build and minify CSS
+function css() {
+  return src('__sass/**/*.scss')
+    .pipe(sass({
+      loadPaths: ['node_modules'],
+      silenceDeprecations: ['color-functions', 'global-builtin', 'if-function', 'import']
+    }).on('error', sass.logError))
     .pipe(dest('css'))
+    .pipe(cleanCSS())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest('css'));
 }
 
-// Wire bower dependencies
-function wireDependencies() {
-  return src('__includes/*.html')
-    .pipe(wiredep())
-    .pipe(dest('__includes'));
+// Lint custom Javascript
+function lintJS() {
+  return src('__js/**/*.js')
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 }
 
-// Build javascript files
+// Bundle and minify Javascript
 function js() {
-  // Lint, sourcemap, and uglify final js files
-  var lintjs = lazypipe()
-    .pipe(jshint)
-    .pipe(jshint.reporter, 'jshint-stylish');
+  const bundle = (input, output) =>
+    src(input)
+      .pipe(terser())
+      .pipe(concat(output))
+      .pipe(dest('js'));
 
-  var processjs = lazypipe()
-    .pipe(sourcemaps.init)
-    .pipe(uglify)
-    .pipe(sourcemaps.write, '.')
-    .pipe(dest, '.');
+  return merge(
+    bundle('node_modules/jquery/dist/jquery.js', 'vendor.min.js'),
+    bundle('node_modules/bootstrap/dist/js/bootstrap.js', 'bootstrap.min.js'),
+    bundle('__js/**/*.js', 'app.min.js')
+  );
+}
 
-  return src('__includes/*.html')
-    .pipe(useref())
-    .pipe(gulpif('*.js', processjs()))
-    .pipe(gulpif('*.html', dest('_includes')));
-};
-
-// Run `jekyll serve`
-function jekyllServe() {
-  const jekyll = child.spawn('jekyll', [
-    'serve', 
+// Build the site using Jekyll, serve it, and watch for changes
+function jekyllServe(cb) {
+  const jekyll = spawn('jekyll', [
+    'serve',
     '--livereload',
     '--drafts',
     '--future'
@@ -94,28 +71,27 @@ function jekyllServe() {
   const jekyllLogger = (buffer) => {
     buffer.toString()
       .split(/\n/)
-      .forEach((message) => log('yellow', 'Jekyll: ' + message));
+      .forEach((message) => console.log(chalk.yellow('Jekyll: ' + message)));
   };
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
-};
+  cb();
+}
 
-// Watch for file changes
-function watchFiles() {
-  // Watch files
-  watch('__sass/vendor/*.scss', series(vendorCss));
-  watch('__sass/*.scss', series(customCss));
-  watch(['__includes/*.html', '__js/**/*.js'], series(js));
-};
+// Watch CSS and Javascript for changes
+function liveReload() {
+  watch('__sass/**/*.scss', css);
+  watch('__js/**/*.js', series(lintJS, js));
+}
 
-// --------------------------------------------------------------------------------------------------------------------
-// Meta-tasks
-// - default: compile all assets, and start jekyll
-// --------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+// Main 'tasks':
+// - build: build the site
+// - liveReload: watch CSS and Javascript for changes
+// - Default: build and then watch for changes
+//-----------------------------------------------------------------------------
+export { clean, css, lintJS, js, liveReload };
 
-exports.default = series(
-  cleanUp,
-  parallel(vendorCss, customCss, wireDependencies),
-  js,
-  parallel(jekyllServe, watchFiles)
-);
+export const build = series(clean, css, lintJS, js, jekyllServe);
+
+export default series(clean, css, lintJS, js, jekyllServe, liveReload);

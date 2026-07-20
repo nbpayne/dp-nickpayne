@@ -19,6 +19,33 @@ blockquote {
 }
 
 // Components
+
+// Bootstrap 5 dropped .card-deck; restore the Bootstrap 4 layout since
+// home.html and posts/carousel.html still rely on it for equal-width cards.
+.card-deck {
+  display: flex;
+  flex-direction: column;
+
+  .card {
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: 576px) {
+    flex-flow: row wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+
+    .card {
+      display: flex;
+      flex: 1 0 0%;
+      flex-direction: column;
+      margin-right: 15px;
+      margin-bottom: 0;
+      margin-left: 15px;
+    }
+  }
+}
+
 .card-noborder {
   border: none;
 
@@ -46,6 +73,10 @@ blockquote {
 
 .navbar-brand {
   font-size: 2rem;
+  // Bootstrap 5 dropped this reset from .navbar-brand; without it the
+  // .h1 class on the brand link picks up the heading line-height (1.2)
+  // instead of inheriting the body's, shrinking the navbar.
+  line-height: inherit;
   white-space: inherit;
   width: 75%;
 }
@@ -64,7 +95,37 @@ blockquote {
   width: 20ex;
 }
 
+// Bootstrap 5 dropped .embed-responsive (replaced by .ratio); restore the
+// Bootstrap 4 aspect-ratio box since nice-to-meet-you.md still uses it.
 .embed-responsive {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
   background-color: #000;
   margin-bottom: 1rem;
+
+  &::before {
+    display: block;
+    content: '';
+  }
+
+  .embed-responsive-item,
+  iframe,
+  embed,
+  object,
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.embed-responsive-16by9::before {
+  padding-top: 56.25%;
 }

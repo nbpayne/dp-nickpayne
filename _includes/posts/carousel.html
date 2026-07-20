@@ -14,7 +14,7 @@
           <div class="card-deck">
           {% for img in page.imgs %}
             <div class="card card-noborder">
-              <a href="#screenshots" data-slide-to="{{ forloop.index | minus: 1 }}"><img class="card-img-top" src="/img/{{ page.path | remove: "_posts/" | remove: "_drafts/" | remove: ".md" }}/th/{{ img }}"></a>
+              <a href="#screenshots" data-bs-target="#screenshots" data-bs-slide-to="{{ forloop.index | minus: 1 }}"><img class="card-img-top" src="/img/{{ page.path | remove: "_posts/" | remove: "_drafts/" | remove: ".md" }}/th/{{ img }}"></a>
             </div>
             {% assign mod = forloop.index | modulo: 3  %}
             {% if mod == 0 %}
