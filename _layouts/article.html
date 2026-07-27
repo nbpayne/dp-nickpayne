@@ -17,8 +17,8 @@ layout: default
         </div>
         <div class="col-lg-3">
 
-          {% assign articles = site.articles | sort: 'date' %}
-          {% assign other_articles = articles | where_exp: "article", "article.url != page.url" %}
+          {% assign articles_desc = site.articles | sort: 'date' | reverse %}
+          {% assign other_articles = articles_desc | where_exp: "article", "article.url != page.url" %}
 
           {% if other_articles.size > 0 %}
           <h5>More Articles</h5>
