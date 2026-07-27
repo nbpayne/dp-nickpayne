@@ -1,0 +1,18 @@
+---
+layout: none
+permalink: /articles/
+sitemap: false
+---
+{% assign latest_article = site.articles | sort: 'date' | last %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url={{ latest_article.url }}">
+  <link rel="canonical" href="{{ site.url }}{{ latest_article.url }}">
+  <title>Redirecting…</title>
+</head>
+<body>
+  <p>Redirecting to <a href="{{ latest_article.url }}">the latest article</a>.</p>
+</body>
+</html>
