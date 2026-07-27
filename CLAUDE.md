@@ -73,6 +73,26 @@ published: true
 3. Place thumbnails in `img/YYYY-MM-DD-slug/th/` — the home page grid and carousel thumbnails are served from `th/`.
 4. The `homeImg` thumbnail (`th/slug.00.jpg`) is shown on the home page card; it does **not** need to be in the `imgs` list.
 
+## Adding a new article
+
+Articles are a separate Jekyll collection (`_articles/`) from posts — written pieces with a single hero image, not film/video projects. Declared in `_config.yml` under `collections.articles` with `permalink: /articles/:year/:month/:day/:slug`.
+
+1. Create `_articles/YYYY-MM-DD-slug.md` with this front matter:
+
+```yaml
+---
+layout: article
+title: Article Title
+heroImg: YYYY-MM-DD-slug.jpg
+author: Author Name
+published: true
+---
+```
+
+2. Unlike posts, article images live in one shared folder, not a per-article one: place the resized hero image (JPG) at `img/articles/YYYY-MM-DD-slug.jpg`.
+3. Place its thumbnail at `img/articles/th/YYYY-MM-DD-slug.jpg` — used in the "More Articles" sidebar shown on every article page.
+4. The `article` layout shows title/date/author in a left column, the hero image and article body in the centre, and a "More Articles" list in the right sidebar, with a Previous/Next pager (ordered by date) below the whole article. There is no separate `/articles` index page — the "Articles" nav item links straight to the most recent article.
+
 ## Layouts
 
 | Layout | Use for |
@@ -80,6 +100,7 @@ published: true
 | `default` | Base wrapper (nav + footer). Rarely used directly. |
 | `home` | Index page — bio + 3-column post grid. |
 | `post` | Individual project — Bootstrap carousel + thumbnail strip. |
+| `article` | Individual article — hero image, "More Articles" grid, Previous/Next pager. |
 | `category` | Filtered post grid. Requires `displayCategory: Music Video` (or similar) in front matter. |
 | `page` | Plain Markdown content. |
 | `two-col` | Two-column layout. |

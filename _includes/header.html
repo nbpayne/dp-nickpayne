@@ -1,6 +1,8 @@
+{% assign latest_article = site.articles | sort: 'date' | last %}
 <nav class="navbar navbar-expand-lg navbar-light">
   <a href="/" class="navbar-brand mb-0 h1">{{ site.title }}</a>
   <div class="navbar-nav">
+    {% if latest_article %}<a class="nav-item nav-link" href="{{ latest_article.url }}">Articles</a>{% endif %}
     <a class="nav-item nav-link" href="/contact">Contact</a>
   </div>
 </nav>

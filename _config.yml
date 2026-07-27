@@ -40,6 +40,10 @@ exclude:
   - CLAUDE.md
   - yarn.lock
 permalink: /:year/:month/:day/:slug
+collections:
+  articles:
+    output: true
+    permalink: /articles/:year/:month/:day/:slug
 defaults:
   -
     scope:

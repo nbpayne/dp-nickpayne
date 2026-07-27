@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+      <div class="row">
+        <div class="col-lg-2 order-lg-first mb-3">
+          <h3>{{ page.title | smartify }}</h3>
+          <p class="text-muted small mb-1">{{ page.date | date: "%b %e, %Y" }}</p>
+          <p class="text-muted small">{{ page.author }}</p>
+        </div>
+        <div class="col-lg-7">
+
+          <img src="/img/articles/{{ page.heroImg }}" class="img-fluid mb-3">
+
+          {{ content }}
+
+        </div>
+        <div class="col-lg-3">
+
+          {% assign articles = site.articles | sort: 'date' %}
+          {% assign other_articles = articles | where_exp: "article", "article.url != page.url" %}
+
+          {% if other_articles.size > 0 %}
+          <h5>More Articles</h5>
+          {% for article in other_articles %}
+            <div class="card card-noborder mb-3">
+              <a href="{{ article.url }}"><img class="card-img-top" src="/img/articles/th/{{ article.heroImg }}"></a>
+              <div class="card-body">
+                <h6 class="card-subtitle text-muted">{{ article.date | date: "%b %e, %Y" }}</h6>
+                <h6 class="card-title mb-0"><a href="{{ article.url }}">{{ article.title | smartify }}</a></h6>
+              </div>
+            </div>
+          {% endfor %}
+          {% endif %}
+
+        </div>
+      </div>
+
+      {% assign articles = site.articles | sort: 'date' %}
+      {% for article in articles %}
+        {% if article.url == page.url %}
+          {% assign prev_index = forloop.index0 | minus: 1 %}
+          {% assign next_index = forloop.index0 | plus: 1 %}
+          {% unless forloop.first %}{% assign prev_article = articles[prev_index] %}{% endunless %}
+          {% unless forloop.last %}{% assign next_article = articles[next_index] %}{% endunless %}
+        {% endif %}
+      {% endfor %}
+
+      <nav aria-label="Article navigation">
+        <ul class="pagination justify-content-center mt-4">
+          <li class="page-item{% if prev_article %}{% else %} disabled{% endif %}"><a class="page-link" href="{{ prev_article.url }}">Previous</a></li>
+          <li class="page-item{% if next_article %}{% else %} disabled{% endif %}"><a class="page-link" href="{{ next_article.url }}">Next</a></li>
+        </ul>
+      </nav>
